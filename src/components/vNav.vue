@@ -3,7 +3,7 @@
     <div>
       <div class="title">KGC新闻</div>
       <div class="Channel">
-        <ul>
+        <ul class="newUl">
           <li
             class="newLi"
             v-for="(item, index) in store.state.check"
@@ -26,12 +26,10 @@ import axios from "axios";
 
 const store = useStore();
 
-console.log(store);
-
 axios
   .get("/json/nav.json")
   .then((res) => res.data.result)
-  .then((data) => store.commit("muChannels", data));
+  .then((data) => store.dispatch("muChannels", data));
 </script>
 
 <style>
@@ -74,6 +72,7 @@ li {
   text-align: center;
   line-height: 0.96rem;
   border: 1px solid;
+  flex-shrink: 0;
 }
 
 .add {
@@ -82,7 +81,13 @@ li {
   border: 0.05rem solid grey;
 }
 
+.newUl{
+  overflow-x:scroll;
+  flex-wrap: nowrap;
+}
+
 .newLi{
   border: none;
+  flex-shrink: 0;
 }
 </style>

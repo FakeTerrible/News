@@ -26,7 +26,7 @@
         <li
           v-for="(item, index) in store.state.noCheck"
           :key="index"
-          @click="store.commit('increment', item)"
+          @click="store.dispatch('increment', item)"
         >
           {{ item }}
         </li>

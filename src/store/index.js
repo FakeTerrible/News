@@ -21,6 +21,17 @@ const store =  createStore({
             state.noCheck.push(channel);
             state.check = state.channels.filter(item=>state.noCheck.indexOf(item)===-1);
         }
+    },
+    actions:{
+        muChannels({ commit }, Channels){
+            commit('muChannels',Channels);
+        },
+        increment({ commit },channel){
+            commit('increment',channel);
+        },
+        decrement({ commit },channel){
+            commit('decrement',channel);
+        }
     } 
 });
 
