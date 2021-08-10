@@ -78,6 +78,8 @@ axios
 }
 
 h3{
+  width: 12rem;
+  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
